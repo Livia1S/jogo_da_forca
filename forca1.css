@@ -5,16 +5,13 @@ body {
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center;
+	width: 100vw;
+	height: 100vh;
 
-	/*background-size: auto;
-	background-repeat: no-repeat;*/
-	
-	
 }
 
 h1 {
 
-	
 	margin-left: 30px;
 }
 
@@ -22,58 +19,80 @@ main {
 
 	gap: 2rem;
 	display: grid;
-	grid-template-columns: 1fr, 1fr, 50%;
-	grid-template-rows: 50%, 1fr, 1fr;
+	grid-template-columns: 20%, 20%, 40%;
+	grid-template-rows: 50%, 20%, 20%;
 	grid-template-areas: 
 		"letras letras forca"
 		"erro erro forca"
-		"botao botao iniciar"
-		;
-	width: 1000px;
-    height: 1000px;
-    /*background-image: radial-gradient(rgba(255, 255, 255, 0.582), rgba(102, 154, 221, 0.445) 70%);
-    opacity: 0.1;*/
-    margin:auto;
-    border-radius: 100px;
-    /*
-    display: inline-block;
-    background-color: radial-gradient(#fff 0%, #69d 70%, transparent 70%);*/
+		"botao botao play-link";
+	width: 90%;
+	height: 90%;
+   
     
 }
 
-.botoes {
+/*main {
 
-	display: flex;
+	gap: 2rem;
+	display: grid;
+	grid-template-columns: 25%, 25%, 25%, 25%;
+	grid-template-rows: 15%, 15%, 15%, 55%;
+	grid-template-areas: 
+		"letras letras forca forca"
+		"letras letras forca forca"
+		"erro erro forca forca"
+		"botao botao botao forca";
+	
+    margin:auto;
+	width: 100%;
+	height: 100%;
+    border-radius: 100px;
+   
+    
+}*/
+
+
+.botoes {
 	align-items: center;
-	justify-content: space-around;
+	display: flex;
+	justify-content: space-evenly;
+	justify-content:flex-end;
 	flex-wrap: wrap;
 	grid-area: botao;
-	width: 30%;
-	height: 30%;
+	width: 100%;
+	height: 100%;
 	padding: 2rem;
+	flex-direction: row;
 }
 
-.iniciar {
-	grid-area: iniciar;
+
+.linkar {
+	grid-area: forca;
+	margin-right: 40px;
+	margin-top: 80px;
 }
 
 .palavras {
 	grid-area: letras;
-	width: 80%;
-	/*height: 30%;*/
+	padding: 60px;
+	
 }
 
-.erros {
+.armazenamento {
 	grid-area: erro;
-	width: 30%;
-	height: 30%;
+	margin-top: 30px;
 }
 
 .forca {
 	grid-area: forca;
 }
 
-button {
+.play {
+
+	grid-area: play-link;
+}
+
+main button {
 
 	font-family: 'Dancing Script', cursive;
 	border: none;
@@ -88,7 +107,7 @@ button {
 
 }
 
-button:before {
+main button:before {
 	content: '';
 	position: absolute;
 	top: 0px;
@@ -100,8 +119,107 @@ button:before {
 	transition: all 1s ease;
 }
 
-button:hover:before {
+main button:hover:before {
 	width: 100%;
+}
+
+#trocar {
+
+	font-family: 'Dancing Script', cursive;
+	width: 80px;
+	height: 200px;
+	text-align: center;
+	border: none;
+	color: #000000;
+	padding: 15px;
+	margin: 5px;
+	line-height: 20px;
+	border-radius: 6px;
+	position: relative;
+	background-color: #AAAAAA;
+	transition: all 400ms ease;
+}
+
+#trocar:before {
+
+	content: '';
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 0px;
+	background: rgba(255, 255, 255, 0.3);
+	border-radius: 6px;
+	transition: all 3s ease;
+
+}
+
+#trocar:hover:before {
+
+height: 200px;
+
+}
+
+a {
+
+	text-decoration: none;
+	text-align: center;
+	color: black;
+
+}
+
+a:hover {
+
+	color: blanchedalmond;
+}
+
+
+.sugestao {
+
+	width: 400px;
+	height: 90px;
+	font-family: 'Dancing Script', cursive;
+	border: none;
+	border-radius: 6px;
+	text-align: center;
+	background-color: rgb(214, 191, 160);
+}
+
+#enviar {
+
+	width: 100px;
+	height: 50px;
+	text-align: center;
+	border: none;
+	color: #000000;
+	padding: 15px;
+	margin: 5px;
+	line-height: 20px;
+	border-radius: 6px;
+	position: relative;
+	background-color: #AAAAAA;
+	transition: all 400ms ease;
+
+}
+
+#enviar:before {
+
+	content: '';
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 0px;
+	background: rgba(255, 255, 255, 0.3);
+	border-radius: 6px;
+	transition: all 0.5s ease;
+
+}
+
+#enviar:hover:before {
+
+	height: 50px;
+	
 }
 
 .livro {
@@ -110,27 +228,18 @@ button:hover:before {
     font-size: 3rem;
     width: 80%;
 }
-.trocar {
-	width: 80px;
-	height: 200px;
-	text-align: center;
-}
+
 
 h3 {
 	font-size: 45px;
 	text-align: center;
 }
 
-#stick {
-   
-    border: 1px solid;
-}
-
 footer {
     background-color: #61524c9a;
     margin-top: 30px;
     box-shadow: inset 5px 3px 15px #000000;
-    color: rgb(49, 32, 11);
+    color: rgb(212, 196, 177);
     text-align: center;
     
 }

@@ -6,9 +6,11 @@
 	<title>ForcaDesafio</title>
 	<link rel='stylesheet' type='text/css' media='screen' href='forca1.css'>
 
-	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 
@@ -20,93 +22,119 @@
 
     <main>
 
-    	<section botoes>
-        <h2>
-            letras
-        </h2>
+    	<section class = "botoes">
+            <h2>
+                letras
+            </h2>
 
-        <button value="a" data-letra><strong>A</strong></button>
-        <button value="ã" data-letra>Ã</button>
-        <button value="á" data-letra>Á</button>
-        <button value="â" data-letra>Â</button>
-        <button value="b" data-letra>B</button>
-        <button value="c" data-letra>C</button>
-        <button value="ç" data-letra>Ç</button>
-        <button value="d" data-letra>D</button>
-        <button value="e" data-letra>E</button>
-        <button value="é" data-letra>É</button>
-        <button value="ê" data-letra>Ê</button>
-        <button value="f" data-letra>F</button>
-        <button value="g" data-letra>G</button>
-        <button value="h" data-letra>H</button>
-        <button value="i" data-letra>I</button>
-        <button value="í" data-letra>Í</button>
-        <button value="j" data-letra>J</button>
-        <button value="k" data-letra>K</button>
-        <button value="l" data-letra>L</button>
-        <button value="m" data-letra>M</button>
-        <button value="n" data-letra>N</button>
-        <button value="ñ" data-letra>Ñ</button>
-        <button value="o" data-letra>O</button>
-        <button value="ó" data-letra>Ó</button>
-        <button value="ô" data-letra>Ô</button>
-        <button value="p" data-letra>P</button>
-        <button value="q" data-letra>Q</button>
-        <button value="r" data-letra>R</button>
-        <button value="s" data-letra>S</button>
-        <button value="t" data-letra>T</button>
-        <button value="u" data-letra>U</button>
-        <button value="ú" data-letra>Ú</button>
-        <button value="v" data-letra>V</button>
-        <button value="w" data-letra>W</button>
-        <button value="x" data-letra>X</button>
-        <button value="y" data-letra>Y</button>
-        <button value="z" data-letra>Z</button>
-        <button value=" " data-letra> </button>
+            <button value="a" data-letra>A</button>
+            <button value="ã" data-letra>Ã</button>
+            <button value="á" data-letra>Á</button>
+            <button value="â" data-letra>Â</button>
+            <button value="b" data-letra>B</button>
+            <button value="c" data-letra>C</button>
+            <button value="ç" data-letra>Ç</button>
+            <button value="d" data-letra>D</button>
+            <button value="e" data-letra>E</button>
+            <button value="é" data-letra>É</button>
+            <button value="ê" data-letra>Ê</button>
+            <button value="f" data-letra>F</button>
+            <button value="g" data-letra>G</button>
+            <button value="h" data-letra>H</button>
+            <button value="i" data-letra>I</button>
+            <button value="í" data-letra>Í</button>
+            <button value="j" data-letra>J</button>
+            <button value="k" data-letra>K</button>
+            <button value="l" data-letra>L</button>
+            <button value="m" data-letra>M</button>
+            <button value="n" data-letra>N</button>
+            <button value="ñ" data-letra>Ñ</button>
+            <button value="o" data-letra>O</button>
+            <button value="ó" data-letra>Ó</button>
+            <button value="ô" data-letra>Ô</button>
+            <button value="p" data-letra>P</button>
+            <button value="q" data-letra>Q</button>
+            <button value="r" data-letra>R</button>
+            <button value="s" data-letra>S</button>
+            <button value="t" data-letra>T</button>
+            <button value="u" data-letra>U</button>
+            <button value="ú" data-letra>Ú</button>
+            <button value="v" data-letra>V</button>
+            <button value="w" data-letra>W</button>
+            <button value="x" data-letra>X</button>
+            <button value="y" data-letra>Y</button>
+            <button value="z" data-letra>Z</button>
+            <button value=" " data-letra> </button>
 
-        </section>
-
-        <section class="iniciar">
-        	<div>
-        	
-        		<button class="iniciar">Iniciar Partida</button>
-        		<button class="trocar">Aqui Você brinca com um Decodificador</button>
-
-
-        	</div>
 
     	</section>
+
 
     	<section class="palavras">
 
     		<h3>Clique para iniciar</h3>
+            
     		
     	</section>
 
-    	<section class="erros">
+    
+
+    	<section class="armazenamento">
     		
     		<p class="frase"></p>
 
-    		<div class="letras-usadas">
-    			<h2>letras usadas</h2>
+    		<div class="sugestao-titulo">
+
+    			<h2>Faça uma sugestão de livro</h2>
+
+                <form>
+
+                    <input type="text" class="sugestao" placeholder="Título do Livro" />
+
+                    <button onclick="enviarItem()" id="enviar"> <i class="fa-solid fa-pencil"></i>Enviar</button>
+
+                </form>
+
+
+               
 			</div>
 
     	</section>
 
     	<section class="forca">
+
     		<canvas id="stick" width="400" height="600"></canvas> 
-    	</section>
+
+        </section>
+
+        <section class="play">
+            
+            <div>
+        	
+        		<button id="iniciar">Iniciar Partida</button>
+
+            </div>
+
+
+            <div>
+
+        		<button id="trocar"> <a href="livia1s.github.io/Proj/" target="_blank"><i class="fa-solid fa-link"></i>Aqui Você brinca com um Decodificador</a></button>
+                
+                
+            </div>
+
+        </section>
 
     </main>
 
     <footer>
+
         <p>Desenvolvido por Livia S.</p>
+
     </footer>
 
 
-
-    
-<script type="text/javascript" src="forca1.js"></script>
+    <script type="text/javascript" src="forca1.js"></script>
 
 
 </body>
