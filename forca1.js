@@ -1,5 +1,5 @@
 const letras = document.querySelectorAll('[data-letra]')
-const iniciar = document.querySelector('.iniciar')
+const iniciar = document.querySelector('#iniciar')
 const busca = document.querySelector(".palavras")
 const mensagem = document.querySelector('.frase')
 const span = document.querySelector('.sugestao-titulo')
@@ -9,7 +9,13 @@ const ctx = canvas.getContext('2d')
 
 
 const alfabeto = "aãáâbcçdeéêfghiíjklmnñoõóôpqrstuúvwxyz "
-const palavraSecreta = ["Senhorita", "maçã", "pássaro", "ônibus", "xadrez", "Macunaíma", "Grande Sertão Veredas", "Quarup","A Guerra Dos Tronos", "Livro das Mil e Uma Noites"]
+const palavraSecreta = ["Senhorita", "Macunaíma", "Grande Sertão Veredas", "Quarup","A Guerra Dos Tronos", "Livro das Mil e Uma Noites", "Dom Casmurro", "O Cortiço", "Gabriela, Cravo e Canela", "Vestido de Noiva", "Vidas Secas", 
+"A Paixão Segundo G.H.", "A Moreninha", "Iracema", "Memórias Póstumas de Brás Cubas", "O Ateneu", "As Três Marias", "Os Sertões", "O Guarani", "Incidente em Antares", "Quarto de Despejo", "Morte e Vida Severina", "Romance da Pedra do Reino", "Felicidade Clandestina", "Capitães de Areia", "O Quinze", "A Rosa do Povo", "Memórias de Um Sargento de Milícias", "Noite na Taverna", "Romanceiro da Inconfidência", "O Pagador de Promessas", "Triste Fim de Policarpo Quaresma", "O Tempo e o Vento", "Fogo Morto", "Lavoura Arcaica", "O Coronel e o Lobisomem", "Antes do Baile Verde", "Viva o Povo Brasileiro", "Sagarana", "Quincas Borba", "Feliz Ano Novo", "São Bernardo", "A Hora da Estrela", "Casa Grande e Senzala", "Memórias do Cárcere", "Budapeste", "Raízes do Brasil", "O Encontro Marcado", "Zero", "As Meninas", "Baú de Ossos", "A Alma Encantadora das Ruas", "A República dos Sonhos", "Um Copo de Cólera", "Moby Dick", "Romeu e Julieta", "A Divina Comédia", "Ilíada", "Odisseia", "O Jogo da Amarelinha", "A Metamorfose", "O Mahabharata", "Hamlet", "Dom Quixote", "Em Busca do Tempo Perdido", "Guerra e Paz", "Crime e Castigo", "Ulysses", "Madame Bovary", "O Processo", "A Montanha Mágica", "As Flores do Mal", "O Som e a Fúria", "O Príncipe", "O Grande Gatsby", "Os Miseráveis", "O Estrangeiro", "A Origem das Espécies", "Adeus às Armas", "Coração das Trevas", "Admirável Mundo Novo", "Mrs Dalloway", "Histórias Extraordinárias", "A Comédia Humana", "Grandes Esperanças", "O Homem sem Qualidades", "Viagens de Gulliver", "Os Lusíadas", "Os Três Mosqueteiros", "Decameron", "Esperando Godot", "Lolita", "Paraíso Perdido", "Robinson Crusoé", "O Retrato de Dorian Gray", "Cem Anos de Solidão", "O Homem sem Qualidades", "Fausto", "Doutor Fausto", "O Vermelho e o Negro", "Eneida", "Retrato de Uma Senhora", "Mensagem", "Os Moedeiros Falsos", "Alice no País das Maravilhas", "A Náusea", "A Consciência de Zeno", "Ficções", "O Rinoceronte", "A Morte de Virgílio", "Folhas de Relva", "O Deserto dos Tártaros", "A Ilustre Casa de Ramires", "As Vinhas da Ira", "Memórias de Adriano", "O Apanhador no Campo de Centeio", "As Aventuras de Huckleberry Finn", "O Leopardo", "Uma Passagem Para a India", "Orgulho e Preconceito", "Pais e Filhos", "As Cidades Invisíveis", "O Lobo da Estepe", "O Complexo de Portnoy", "Reparação", "Desonra", "As Irmãs Makioka", "Pedro Páramo", "Frankenstein", "O Mundo se Despedaça", "Amada", "O Conto da Aia", "A Revolução dos Bichos", "Jane Eyre", "O Sol é Para Todos", "O Morro dos Ventos Uivantes", "Ao Farol", "Anna Kariênina", "Os Contos de Cantuária", "Os Filhos da Meia-Noite", "O Pequeno Príncipe", "O Mestre e a Margarida", "Drácula", "A Mão Esquerda da Escuridão", "Um Conto de Natal", "Mulherzinhas", "Orlando", "As Aventuras de Tom Sawyer", "O Aleph", "O Senhor dos Anéis", "Harry Potter", "A Peste", "O Hobbit", "Rebecca", "E o Vento Levou", "David Copperfield", "Nada de Novo no Front", "Emma", "Persuasão", "O Caçador de Pipas", "O Senhor das Moscas", "Razão e Sensibilidade", "O Amor nos Tempos do Cólera", "Ratos e Homens", "O Conde de Monte Cristo", "Judas, O Obscuro", "Oliver Twist", "A Redoma de Vidro", "Pergunte ao Pó", "Germinal", "A Feira das Vaidades", "Atlas de Nuvens", "A Cor Púrpura", "Os Vestígios do Dia", "Um Estudo em Vermelho", "O Cão dos Baskervilles", "Ensaio Sobre a Cegueira", "O Nome da Rosa", "O Poder e a Glória", "A Guerra dos Mundos", "O Nome do Vento", "Tom Jones", "A Vida Modo de Usar", "O Pêndulo de Foucault", "Os Irmãos Karamázov", "Por Quem os Sinos Dobram", "Ilusões Perdidas", "A Filha do Capitão", "Bonequinha de Luxo", "O Poço e o Pêndulo", "Ensaio Sobre a Lucidez", "O Segundo Sexo", "Demian", "Os Maias", "Terra Sonâmbula", "Livro do Desassossego", "O Canto do Pássaro", "O Diário de Anne Frank", "Laranja Mecânica", "O Capote", "Doutor Jivago", "A Máquina de Fazer Espanhóis", "As Aventuras de Sherlock Holmes", "A Época da Inocência", "Assassinato no Expresso Oriente", "A Insustentável Leveza do Ser", "Servidão Humana", "A Cidade e os Cachorros", "Auto de Fé", "A Ilha Misteriosa", "Elogio da Loucura", "Intermitências da Morte",]
+
+
+
+
+
 let tentativas = 0
 let palavraSorteada = ''
 
@@ -101,7 +107,7 @@ function verificaBotao(botao, palavra) {
 }
 
 iniciar.addEventListener('click', () => {
-    ctx.clearReact(0, 0, 400, 600)
+    ctx.clearRect(0, 0, 400, 600)
     tentativas = 0
     
     letras.forEach(elemento => { 
@@ -109,7 +115,7 @@ iniciar.addEventListener('click', () => {
         elemento.style.color = "#000000"
     })
 
-    //forca()     
+    forca()     
   
     let palavra = palavraAleatoria(palavraSecreta)   
     palavraSorteada = palavraSecreta[palavra]
@@ -163,7 +169,7 @@ function forca () {
 
 }
 
-forca()
+//forca()
 
 
 
@@ -278,6 +284,7 @@ function barriga () {
 	//ctx.stroke();
 	ctx.fillStyle = "rgb(240, 100, 65)";
 	ctx.fill();
+    
 
 }
 
@@ -337,13 +344,14 @@ function bracoEsquerdo() {
 	//ctx.stroke();
 	ctx.fillStyle = "#B0A399";
 	ctx.fill();
-
+    //ctx.globalCompositeOperation='destination-over'
 }
 
 function pernaDireita () {
 
 	ctx.fillStyle = "rgb(236, 78, 39)"
 	ctx.fillRect(242, 358, 40, 50)
+    //ctx.globalCompositeOperation='destination-over';
 
 }
 
