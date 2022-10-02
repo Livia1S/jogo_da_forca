@@ -42,23 +42,20 @@ function validaCliqueDoBotao(){
 }
 
 
-function verificaBotao(botao, palavra) {
+function verificaBotao(botao, palavra) 
+{
 
     let resultado = palavraSorteada
     palavra = palavra.toLowerCase()
-    console.log(resultado)
+    //console.log(resultado)
+    //console.log(palavra)
+
+    const proto = document.querySelectorAll('span') 
+    let palavra = proto.innerText
     console.log(palavra)
 
-    //const proto = document.querySelectorAll('span')
-    const proto = Array.from(document.querySelectorAll('span'))
-    proto.every(item => console.log(item))
-    
-  
-            
-        //document.querySelector('.palavras').innerHTML = `<h2>Parabéns! Você venceu!</h2>`
-         //return
-     
-        if(tentativas < 7){  
+
+    if(tentativas < 7){  
         
           
         if(palavra.includes(botao)){
@@ -76,92 +73,11 @@ function verificaBotao(botao, palavra) {
           }
     } else {
       document.querySelector('.palavras').innerHTML = `<h2 id='fm'>Fim de Jogo</h2>`
-      function cabeca2() {
-
-        ctx.shadowColor = "rgba(0, 0, 0, 0.5)"
-        ctx.shadowOffsetX = 3
-        ctx.shadowOffsetY = 3
-        ctx.shadowBlur = 5
-    
-        let x = 200;
-        let y = 100;
-        let width = 180;
-        let heigth = 180;
-        let shoulder = 50;
-        let radius = 50;
-    
-    
-    
-        ctx.beginPath();
-        ctx.moveTo(x + shoulder, y);
-        ctx.lineTo(x + width - shoulder, y);
-        ctx.arcTo(x + width, y, x + width, y + shoulder, radius);
-        ctx.lineTo(x + width, y + heigth - shoulder);
-        ctx.arcTo(x + width, y + heigth, x + width - shoulder, y + heigth, radius);
-        ctx.lineTo(x + shoulder, y + heigth);
-        ctx.arcTo(x, y + heigth, x, y + heigth - shoulder, radius);
-        ctx.lineTo(x, y + shoulder);
-        ctx.arcTo(x, y, x + shoulder, y, radius);
-    
-    
-        ctx.closePath();
-        //ctx.stroke();
-        ctx.fillStyle = "#B0A399";
-        ctx.fill();//cabeça
-    
-    
-        /*ctx.shadowColor = "rgba(0, 0, 0, 0)"
-        ctx.fillStyle = "#000"
-        ctx.fillRect(230, 190, 15, 15)//olho direito
-    
-        ctx.fillStyle = "#000"
-        ctx.fillRect(340, 190, 15, 15)//olho esquerdo*/
-    
-        ctx.shadowColor = "rgba(0, 0, 0, 0)"
-        ctx.fillStyle = "#000"
-        ctx.fillRect(230, 190, 20, 2)//olho direito
-    
-        ctx.fillStyle = "#000"
-        ctx.fillRect(340, 190, 20, 2)//olho esquerdo
-    
-        /*ctx.shadowColor = "rgba(0, 0, 0, 0.5)"
-        ctx.moveTo(250, 180)//sobrancelha direita
-        ctx.lineTo(230, 170)
-        ctx.stroke()*/
-        ctx.shadowColor = "rgba(0, 0, 0, 0.5)"
-        ctx.moveTo(250, 170)//sobrancelha direita
-        ctx.lineTo(230, 180)
-        ctx.stroke()
-    
-        /*ctx.moveTo(335, 180)//sobrancelha esquerda
-        ctx.lineTo(355, 170)
-        ctx.stroke()
-        ctx.strokeStyle = "black"*/
-        ctx.moveTo(335, 170)//sobrancelha esquerda
-        ctx.lineTo(355, 180)
-        ctx.stroke()
-        ctx.strokeStyle = "black"
-    
-        ctx.beginPath()
-        ctx.shadowColor = "rgba(0, 0, 0, 0.2)"
-        ctx.beginPath() //boca
-        ctx.lineTo(238, 245)//ponto inicial
-        //ctx.quadraticCurveTo(293, 260, 348, 225)//ponto central e ponto final
-        ctx.quadraticCurveTo(293, 200, 348, 245)//ponto central e ponto final
-        ctx.stroke()
-        //ctx.strokeStyle = "black"
-        ctx.closePath()
-
-      }
-    }
-
       cabeca2()
+    }        
+}     
       
-    }    
-  
-  
-  
-  function mostraPalavra(palavras, str) { 
+    function mostraPalavra(palavras, str) { 
   
       const letra = document.querySelectorAll('span')
   
@@ -169,7 +85,7 @@ function verificaBotao(botao, palavra) {
   
       palavras.split('').forEach((palavra, i, arrayPalavra) => {
           
-          console.log(palavra, i, arrayPalavra)
+          //console.log(palavra, i, arrayPalavra)
   
       if(arrayPalavra[i] === str){
                 letra[i].innerHTML = arrayPalavra[i] = str
@@ -180,7 +96,7 @@ function verificaBotao(botao, palavra) {
   }
        
 
-  function ocultaPalavra(palavras) {
+    function ocultaPalavra(palavras) {
     
     const resultado = palavras.split('').map((palavra, i) => {
         return `<span>${palavra.replace(palavras.charAt(i), (letra) => {
@@ -431,6 +347,70 @@ function pernaEsquerda () {
 	ctx.fillRect(296, 358, 40, 50)
 
 }
+
+function cabeca2() {
+
+    ctx.shadowColor = "rgba(0, 0, 0, 0.5)"
+    ctx.shadowOffsetX = 3
+    ctx.shadowOffsetY = 3
+    ctx.shadowBlur = 5
+
+    let x = 200;
+    let y = 100;
+    let width = 180;
+    let heigth = 180;
+    let shoulder = 50;
+    let radius = 50;
+
+
+
+    ctx.beginPath();
+    ctx.moveTo(x + shoulder, y);
+    ctx.lineTo(x + width - shoulder, y);
+    ctx.arcTo(x + width, y, x + width, y + shoulder, radius);
+    ctx.lineTo(x + width, y + heigth - shoulder);
+    ctx.arcTo(x + width, y + heigth, x + width - shoulder, y + heigth, radius);
+    ctx.lineTo(x + shoulder, y + heigth);
+    ctx.arcTo(x, y + heigth, x, y + heigth - shoulder, radius);
+    ctx.lineTo(x, y + shoulder);
+    ctx.arcTo(x, y, x + shoulder, y, radius);
+
+
+    ctx.closePath();
+    //ctx.stroke();
+    ctx.fillStyle = "#B0A399";
+    ctx.fill();//cabeÃ§a
+
+    ctx.shadowColor = "rgba(0, 0, 0, 0)"
+    ctx.fillStyle = "#000"
+    ctx.fillRect(230, 190, 20, 2)//olho direito
+
+    ctx.fillStyle = "#000"
+    ctx.fillRect(340, 190, 20, 2)//olho esquerdo
+
+    
+    ctx.shadowColor = "rgba(0, 0, 0, 0.5)"
+    ctx.moveTo(250, 170)//sobrancelha direita
+    ctx.lineTo(230, 180)
+    ctx.stroke()
+
+  
+    ctx.moveTo(335, 170)//sobrancelha esquerda
+    ctx.lineTo(355, 180)
+    ctx.stroke()
+    ctx.strokeStyle = "black"
+
+    ctx.beginPath()
+    ctx.shadowColor = "rgba(0, 0, 0, 0.2)"
+    ctx.beginPath() //boca
+    ctx.lineTo(238, 245)//ponto inicial
+    //ctx.quadraticCurveTo(293, 260, 348, 225)//ponto central e ponto final
+    ctx.quadraticCurveTo(293, 200, 348, 245)//ponto central e ponto final
+    ctx.stroke()
+    //ctx.strokeStyle = "black"
+    ctx.closePath()
+
+  }          
 
 function montaForca(tentativas){
     switch (tentativas) {
