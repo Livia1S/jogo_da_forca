@@ -19,7 +19,7 @@
 	
     <main>
 
-    	<section class = "botoes">
+    	<section class = "botoes disable">
             <h2>
                 letras
             </h2>
@@ -62,6 +62,8 @@
             <button value="y" data-letra>Y</button>
             <button value="z" data-letra>Z</button>
             
+            
+            
         </div>
 
     	</section>
@@ -70,9 +72,7 @@
     	<section class="palavras">
 
     		<h3>Clique para iniciar</h3>
-            
-    		
-    	</section>
+                                                                                                                                                                                                                                                      </section>
 
     
 
@@ -82,13 +82,13 @@
 
     		<div class="sugestao-titulo">
 
-    			<h2>Faça uma sugestão de livro</h2>
+    			<h2>Autora/Autor do Livro</h2>
 
                 <div>
 
-                    <input type="text" class="sugestao" placeholder="Título do Livro" />
+                    <input type="text" class="sugestao" placeholder="..." />
 
-                    <button onclick="enviarItem()" id="enviar"> <i class="fa-solid fa-pencil"></i>Enviar</button>
+                    <button onclick="enviarItem()" id="enviar"> <i class="fa-solid fa-pencil"></i>Anotar e Ler</button>
 
                 </div>
 
@@ -121,15 +121,20 @@
         	<button id="trocar"> <a href="https://livia1s.github.io/Proj/" target="_blank"><i class="fa-solid fa-link"></i>Aqui Você brinca com um Decodificador</a></button>
                 
                 
-            
-
         </section>
+
+
+        <dialog class="popUp">
+            <h2 id="reinicio"></h2>
+            <span id="teste1"></span>
+            <button id="teste_inicio">Reiniciar</button>
+        </dialog>
 
     </main>
 
     <footer>
 
-        <p>Desenvolvido por Livia S.</p>
+        <span>Desenvolvido por Livia S.</span>
 
     </footer>
 

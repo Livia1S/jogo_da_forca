@@ -7,6 +7,15 @@
     text-decoration: none;
 }
 
+/*.container {
+	max-width: 1222px; mariano
+	margin: auto;
+  }*/
+  
+  .disable {
+	pointer-events: none;
+  }
+
 body {
 
 	font-family: 'Dancing Script', cursive;
@@ -17,12 +26,17 @@ body {
 	width: 90vw;
 	height: 100vh;
 	margin: 0 auto;
+	/*background-size: 1366px 1366px;
+	width: 1366px;
+	height: 961px;
+	background-color: #afaca5;*/
 
 }
 
 
 main {
 
+	/*gap: 7rem;*/ 
 	gap: 2rem;
 	display: grid;
 	grid-template-columns: 40%, 45%;
@@ -31,22 +45,29 @@ main {
 		"letras forca"
 		"erro forca"
 		"botao play-link";
-	width: 100%;
-	height: 100%;
+	
    
 }
 
 .palavras {
 	grid-area: letras;
+	height: 100%;
+	width: 90%;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-evenly;
-	height: 100%;
-
+	/*padding-right: 70px;mariano*/
 	
 }
 
 #fm {
+
+	text-align: center;
+	font-size: 3rem;
+	color: #7E3D57;
+}
+
+#prb {
 
 	text-align: center;
 	font-size: 3rem;
@@ -222,6 +243,7 @@ a:hover {
 	width: 400px;
 	height: 90px;
 	font-family: 'Dancing Script', cursive;
+	font-size: 25px;
 	border: none;
 	border-radius: 6px;
 	text-align: center;
@@ -232,6 +254,7 @@ a:hover {
 
 	width: 100px;
 	height: 50px;
+	font-size: 12px;
 	text-align: center;
 	border: none;
 	color: #000000;
@@ -266,10 +289,20 @@ a:hover {
 }
 
 .livro {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
     margin: 0 auto;
     text-align: center;
-    font-size: 3rem;
+    /*font-size: 3rem;*/
+	max-width: 400px;
     width: 80%;
+}
+
+p {
+    display: inline;
+    font-size: 2rem;
 }
 
 
